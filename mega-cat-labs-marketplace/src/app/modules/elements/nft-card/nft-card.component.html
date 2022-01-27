@@ -1,0 +1,80 @@
+<div class="card"
+    [class.active]="activeNft === nft.tokenId"
+    (click)="openNft(nft)">
+    <div class="preview" style="background: url({{nft.metadata.image}})"></div>
+    <div class="details">
+        <div class="info">
+            <span class="label">
+                {{ nft.collection ? nft.collection : 'Mega Cat Labs' }}
+                <span class="material-icons icon-font">
+                    verified
+                </span>
+            </span>
+            <span class="title">
+                {{ nft.metadata.name}}
+            </span>
+            <span class="label">0x{{nft.tokenId}}</span>
+            <p *ngIf="nft.type === 'listing'">{{ nft.metadata.description}}</p>
+        </div>
+        <div class="price" *ngIf="nft.type === 'buy-now'">
+            <span class="label">PRICE</span>
+            <p class="price-text"><i>$</i>{{nft.price}}</p>
+            <p class="blockchain">{{nft.nft.blockchain}}</p>
+        </div>
+    </div>
+    <div class="details no-padding" *ngIf="nft.type === 'pending'">
+      <div>
+        <span class="label">Status</span>
+        <p class="title">Transferring ({{nft.status}})</p>
+        <p class="">This NFT is currently being transferred to your wallet.</p>
+      </div>
+    </div>
+    <div class="action" *ngIf="nft.type === 'buy-now' || nft.type === 'listing'" [class.no-padding]="nft.type === 'buy-now'">
+        <button
+            class="btn btn-secondary mcl-button"
+            (click)="activeNft = nft.tokenId"
+            *ngIf="nft.type === 'listing'">
+            List For Sale
+        </button>
+        <button class="favorite"
+            *ngIf="nft.type === 'listing'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#fff">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+        </button>
+       <div class="bid"
+            *ngIf="nft.type === 'buy-now'">
+           <div class="timer">
+            <countdown [config]="{ leftTime: 166400 }"></countdown>
+            <span class="label">
+                <span class="hours">HRS</span>
+                <span class="hours">MIN</span>
+                <span class="hours">SEC</span>
+            </span>
+           </div>
+            <button
+                class="btn buy-now"
+                *ngIf="nft.type === 'buy-now'"
+                (click)="addToCart(nft)">
+                <span class="text">BUY NOW</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#f99b1d">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </button>
+       </div>
+    </div>
+    <div class="sale-form">
+        <div class="field-wrapper">
+            <div class="mcl-select currency">
+                <div class="selected">
+                    <span class="label">USD</span>
+                </div>
+            </div>
+            <input type="text" placeholder="Amount" [(ngModel)]="nft.price">
+        </div>
+        <div class="actions">
+            <button class="btn cancel" (click)="activeNft = ''">Cancel</button>
+            <button class="btn sell" (click)="listForSale(nft)">Complete Listing</button>
+        </div>
+    </div>
+</div>

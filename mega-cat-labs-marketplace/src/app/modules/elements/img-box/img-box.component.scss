@@ -1,0 +1,27 @@
+.img-box-wrapper {
+    display: flex;
+    margin: 20px;
+    .img-container {
+        max-height: 50px;
+        width: 50px;
+        margin-right: 20px;
+        img {
+            width: 100%;
+        }
+    }
+    .text-container {
+        span {
+            display: block;
+            color: #fff;
+            &.title{
+                font-size: 26px;
+                font-weight: bold;
+            }
+            &.details {
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+}

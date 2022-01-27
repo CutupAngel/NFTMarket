@@ -1,0 +1,59 @@
+$primary: #f99b1d;
+$accent: #e04206;
+
+.mcl-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  .notification-icon {
+    color: $primary;
+    border-radius: 100px;
+    width: 44px;
+    height: 44px;
+    display: block;
+    padding: 13px;
+    &:hover{
+        background-color: $accent;
+        color: #fff;
+    }
+  }
+  .mat-badge-medium .mat-badge-content{
+    width: 22px;
+    height: 22px;
+    line-height: 30px;
+  }
+
+  .navbar-shrink {
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: #fff;
+    .navbar-brand {
+        color: #212529;
+    }
+    .navbar-nav{
+        .nav-item{
+            .nav-link{
+                color: #212529;
+                padding: 0 1rem; 
+            }
+        }
+    }
+}
+.search{
+  background-color: #202020;
+  border: 1px solid $primary;
+}
+.navbar-toggler{
+  width: 47px;
+  height: 34px;
+  background-color: $primary;
+  border:none;
+}
+.navbar-toggler .line{
+  width: 100%;
+  float: left;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}

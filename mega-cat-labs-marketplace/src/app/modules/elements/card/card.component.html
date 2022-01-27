@@ -1,0 +1,18 @@
+<!-- Load up banner -->
+<app-banner 
+    *ngIf="type === 'banner'" 
+    [properties]="properties"
+    ></app-banner>
+
+<!-- Load up Image Box element -->
+<div *ngFor="let stat of properties">
+    <app-img-box
+    *ngIf="type === 'image-box'" 
+    [properties]="stat"
+    ></app-img-box>
+</div>
+
+<app-product 
+    *ngIf="type === 'product'"
+    [product]="properties"
+    ></app-product>

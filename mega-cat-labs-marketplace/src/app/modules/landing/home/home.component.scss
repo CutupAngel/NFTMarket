@@ -1,0 +1,44 @@
+.mcl-button {
+    width: 100%;
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 8px 13px;
+    background-color: #ea923e;
+    border-color: #ea923e;
+    border-radius: 30px;
+}
+.mcl-button-outline {
+    width: 100%;
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 8px 13px;
+    color: #ea923e;
+    background-color: transparent;
+    border-color: #ea923e;
+    border-radius: 30px;
+}
+.mcl-card {
+    background-color: #3a3b3c;
+    border-radius: 20px;
+    margin: 15px 10px;
+    position: relative;
+    box-shadow: 0 3px 20px rgb(0 0 0 / 40%);
+}
+.mcl-collection-image {
+    height: 100px;
+    border-radius: 10px;
+}
+.card-title{
+    color: #fff;
+}
+.carousel-cell img{
+    height: 100px !important;
+}
+
+.banner{
+   padding: 20px 100px;
+}

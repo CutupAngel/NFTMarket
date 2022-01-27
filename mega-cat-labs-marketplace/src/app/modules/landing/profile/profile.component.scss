@@ -1,0 +1,103 @@
+.text-style {
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.button-style {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 100px;
+}
+
+:host ::ng-deep .mat-tab-label {
+    width: 50%;
+}
+::ng-deep
+    .mat-tab-group
+    .mat-tab-header
+    .mat-tab-label-container
+    .mat-tab-list
+    .mat-tab-labels
+    .mat-tab-label.mat-tab-label-active {
+    background-color: #ea923e !important;
+    color: white !important;
+}
+::ng-deep
+    .mat-tab-group
+    .mat-tab-header
+    .mat-tab-label-container
+    .mat-tab-list
+    .mat-tab-labels
+    .mat-tab-label.mat-tab-label {
+    background-color: #3a3b3c;
+}
+.mcl-button {
+    width: 100%;
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 8px 13px;
+    background-color: #ea923e;
+    border-color: #ea923e;
+    border-radius: 30px;
+}
+.mcl-button-outline {
+    width: 100%;
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 8px 13px;
+    color: #ea923e;
+    background-color: transparent;
+    border-color: #ea923e;
+    border-radius: 30px;
+}
+.mcl-card {
+    background-color: #3a3b3c;
+    border-radius: 20px;
+    margin: 15px 10px;
+    position: relative;
+    box-shadow: 0 3px 20px rgb(0 0 0 / 40%);
+}
+.mcl-collection-image {
+    height: 185px;
+    border-radius: 10px;
+}
+.mcl-search-input {
+    color: white;
+    background-color: transparent;
+    border-radius: 45px;
+    border-color: #ea923e;
+    &:focus {
+        box-shadow: none;
+        &:focus {
+            outline: none !important;
+            border: 1px solid ea923e;
+            box-shadow: 0 0 10px #ea923e;
+        }
+    }
+}
+.mcl-search-button {
+    background-color: #ea923e;
+    border-radius: 45px;
+    border-color: #ea923e;
+    &:focus {
+        outline: none !important;
+        border: 1px solid ea923e;
+        box-shadow: 0 0 10px #ea923e;
+    }
+}
+.mcl-dropdown {
+    width: 100%;
+    height: 50px;
+}
+.mcl-dropdown-list {
+    width: 100%;
+    background-color: #ea923e;
+}
+.card-title{
+    color: #fff;
+}

@@ -1,0 +1,55 @@
+{
+  "name": "megacat-marketplace-server",
+  "version": "1.0.0",
+  "engines": {
+    "node": "15.x",
+    "npm": "7.x"
+  },
+  "description": "MegaCat Studios Whitelabel Marketplace Restful API with Node.js, Express and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "staging": "node server.js --environment staging",
+    "bkcn-staging": "node server.js --environment bkcn-staging"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "rest",
+    "api"
+  ],
+  "author": "nikko-megacat",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.973.0",
+    "axios": "^0.21.4",
+    "bcrypt": "^5.0.1",
+    "chroma-js": "^2.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-jwt": "^6.0.0",
+    "express-session": "^1.17.2",
+    "forever": "^0.10.10",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.5",
+    "mongodb": "^3.6.10",
+    "mongoose": "^5.13.3",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "supervisor": "^0.12.0",
+    "tunnel-ssh": "^4.1.6",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

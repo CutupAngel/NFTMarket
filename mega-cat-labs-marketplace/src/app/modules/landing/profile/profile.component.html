@@ -1,0 +1,104 @@
+<div class="container py-7 row">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="rounded-lg object-cover" src="{{ avatar }}" />
+                </div>
+                <div class="col-md-8">
+                    <h1 class="text-style">{{user?.name}}</h1>
+                    <button (click)="openAvatarModal(user)" class="btn btn-primary button-style">
+                        <i class="fas fa-camera"></i>
+                        Change Avatar
+                    </button>
+                    <button (click)="openEmailModal(user)" class="btn btn-primary button-style ml-2">
+                        <i class="fas fa-envelope"></i>
+                        Update Email
+                    </button>
+                    <button (click)="openPasswordModal(user)" class="btn btn-primary button-style ml-7 mt-2">
+                        <i class="fas fa-lock"></i>
+                        Change Password
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-style align-self-center">
+                Total NFTs: {{nfts?.length}}
+            </h3>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <mat-tab-group animationDuration="1500ms">
+        <mat-tab label="Inventory" class="tab">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10 mt-4">
+                    <div class="row">
+                        <div class="col-md-3 py-2" *ngFor="let nft of nfts">
+                            <div class="card mcl-card">
+                                <div class="card-body">
+                                    <img src="{{ extractFromJson(nft.metadata, 'image') }}"
+                                        class="mcl-collection-image" />
+                                    <div class="mt-5">
+                                        <div class="px-3 mb-2">
+                                            <h5 class="card-title">
+                                                {{ (extractFromJson(nft.metadata, 'name')?.length>12)?
+                                                (extractFromJson(nft.metadata, 'name') |
+                                                slice:0:12)+'..':(extractFromJson(nft.metadata, 'name'))}}
+                                            </h5>
+                                        </div>
+                                        <div class="d-flex justify-content-around">
+                                            <button (click)="openListModal(nft)" class="btn btn-secondary mcl-button">List
+                                                For Sale</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="My Listings" class="tab">
+            <div class="row" style="height: 350px;"></div>
+        </mat-tab>
+        <mat-tab label="My Auctions" class="tab">
+            <div class="row" style="height: 350px;"></div>
+        </mat-tab>
+        <mat-tab label="Sold" class="tab">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10 mt-4">
+                    <div class="row">
+                        <div class="col-md-3 py-2" *ngFor="let order of orders">
+                            <div class="card mcl-card">
+                                <div class="card-body">
+                                    <img src="{{ order.nftImage}}"
+                                        class="mcl-collection-image" />
+                                    <div class="mt-5">
+                                        <div class="px-1 mb-2">
+                                            <p class="card-title">{{order.nftName}}</p>
+                                          </div>
+                                          <div class="d-flex justify-content-between flex-row px-1">
+                                            <p class="card-text" style="color: black;">${{order.nftPrice}}</p>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Bought" class="tab">
+            <div class="row" style="height: 350px;"></div>
+        </mat-tab>
+        <mat-tab label="Collections" class="tab">
+            <div class="row" style="height: 350px;"></div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
